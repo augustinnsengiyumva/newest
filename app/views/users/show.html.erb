@@ -1,0 +1,16 @@
+<h1><%= @user.name %>'s page</h1>
+
+<p>email address: <%= @user.email %></p>
+
+    
+  <% user = current_user %>
+   <%= link_to 'Check the details', user_path %>
+   <%= link_to "Edit this blog", edit_user_path %>
+  
+  </tr>
+ 
+<%= link_to 'Post a new blog', new_blog_path%>
+
+    
+
+

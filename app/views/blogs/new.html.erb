@@ -1,0 +1,25 @@
+<%= form_with(model: @blogs, local: true) do |form| %>
+<% if @blogs.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @blogs.errors.count %>errors occurred.</h2>
+      <ul>
+
+      <% @blogs.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="blog_title">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="blog_title">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+   <h2>Create a new blog</h2>
+
+
+  <%= form.submit %>
+<% end %>
