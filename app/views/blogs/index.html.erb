@@ -11,16 +11,18 @@
     <td><%= blog.title %></td>
     <td><%= blog.content %></td>
    <td><%= link_to 'Check the details', blog_path(blog.id) %></td>
-      
+       <% if current_user.id == blog.user_id %>
     <td><%= link_to "Edit this blog", edit_blog_path(blog.id) %></td>
  
     
     <td><%= link_to link_to 'Delete this blog', blog_path(blog.id), method: :delete ,data: { confirm: 'Are you sure?' }%></td>
-   
+   <td>  <%= link_to 'Post a new blog', new_blog_path %></td>
   </tr>
 <% end %>
+<% end %>
+
   
-   <%= link_to 'Post a new blog', new_blog_path %>
+  
 </table>
 
 <br>

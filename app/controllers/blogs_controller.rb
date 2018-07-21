@@ -9,11 +9,16 @@ class BlogsController < ApplicationController
 
   # Add
   def new
-  @blogs = Blog.new
+  if params[:back]
+      @blog = Blog.new(blog_params)
+    else
+       @blog = Blog.new    
+  end
   end
   def create
-    @blog = Blog.new(blog_params)
-    #@blog.user_id = current_user.id
+     
+     @blog = Blog.new(blog_params)
+    @blog.user_id = current_user.id
     if @blog.save
       # Switch to the list screen and display a message saying "You have created new blog!"
       redirect_to blogs_path, Notice: "You have created new blog!"
