@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy] 
+  # before_action :set_blog, only: [:show, :edit, :update, :destroy] 
   
  
   
@@ -45,7 +45,7 @@ class BlogsController < ApplicationController
   end
   
   def destroy
-    @blog.destroy
+    @blogs.destroy
     redirect_to blogs_path, Notice: "You have deleted the blog!"
   end
   
