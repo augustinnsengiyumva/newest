@@ -4,13 +4,14 @@
 
     
   <% user = current_user %>
+  <% if logged_in? %>
    <%= link_to 'Check the details', user_path %>
    <%= link_to "Edit this blog", edit_user_path %>
   
   </tr>
  
 <%= link_to 'Post a new blog', new_blog_path%>
-
+<% end %>
     
 
 
